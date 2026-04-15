@@ -7,6 +7,20 @@ PrismPulse is a production-grade **autonomous AI trading agent** on the **X Laye
 
 ---
 
+## 🛑 The Problem
+
+The X Layer meme-token ecosystem moves at extreme velocity. Retail traders and other agents face a core structural disadvantage: blindly trading high-momentum tokens carries severe contract risks (honeypots, high-tax rugs, sudden liquidity pulls), but manual vetting is simply too slow. The ecosystem lacks a tool that can bridge **high-speed on-chain signal scanning** with **human-level risk assessment** to provide safe, autonomous entry.
+
+## 💡 The Solution: PrismPulse
+
+PrismPulse acts as the **"Intuition Layer"** for the X Layer ecosystem. It solves the speed vs. safety dilemma by operating a fully autonomous, continuous pipeline:
+
+1. **Intelligent Scanning**: It uses the Onchain OS Market Module to detect high-velocity token momentum before human traders can react.
+2. **AI-Driven Vetting**: It pipes those signals into a local Llama 3.2 model to apply a semantic "sanity check" (identifying honeypot patterns and narrative risks) that simple math algorithms often miss.
+3. **Micro-Proving**: Before committing capital, it safely routes a micro-transaction (0.001 OKB) via the Onchain OS DEX to empirically verify liquidity and slippage.
+4. **Self-Sustaining Economy**: It monetises its high-confidence alpha via x402 payments, using the revenue to auto-refill its native OKB gas vault, resulting in a true "deploy and forget" sovereign agent.
+
+---
 ## 🏗️ Architecture Overview
 
 ```
