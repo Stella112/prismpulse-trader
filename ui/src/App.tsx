@@ -9,7 +9,8 @@ function AgentActivitySection() {
   useEffect(() => {
     const fetchTxs = async () => {
       try {
-        const res = await fetch(`http://${window.location.hostname}:4002/api/transactions`);
+        const API_BASE = import.meta.env.VITE_API_URL || 'http://38.49.209.149:4002';
+        const res = await fetch(`${API_BASE}/api/transactions`);
         if (res.ok) {
           const json = await res.json();
           setData(json);
@@ -134,7 +135,8 @@ export default function App() {
   useEffect(() => {
     const fetchStatus = async () => {
       try {
-        const res = await fetch(`http://${window.location.hostname}:4002/api/status`);
+        const API_BASE = import.meta.env.VITE_API_URL || 'http://38.49.209.149:4002';
+        const res = await fetch(`${API_BASE}/api/status`);
         if (res.ok) {
           const json = await res.json();
           setStatus(json);

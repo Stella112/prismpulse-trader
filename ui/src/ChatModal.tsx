@@ -24,7 +24,8 @@ export default function ChatModal({ isOpen, onClose }: { isOpen: boolean; onClos
     
     try {
       console.log(`[Chat] Sending command to backend: "${currentInput}"...`);
-      const response = await fetch(`http://${window.location.hostname}:4002/api/command`, {
+      const API_BASE = import.meta.env.VITE_API_URL || 'http://38.49.209.149:4002';
+      const response = await fetch(`${API_BASE}/api/command`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ command: currentInput })
