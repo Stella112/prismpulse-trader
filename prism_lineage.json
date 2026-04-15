@@ -1,0 +1,55 @@
+[
+  {
+    "timestamp": "2026-04-14T19:15:08.000Z",
+    "prismId": "PROVE-IT-1",
+    "signal_summary": "WOKB/USDC • Micro buy",
+    "reasoning_hash": "Verified proof-of-concept trade executed on PotatoSwap via OKX DEX Aggregator.",
+    "security_results": "PASS",
+    "outcome_tx": "0x614475a727096c693a534186f6666eb7168ad32b6aa67f4a5272de7cd74ec708"
+  },
+  {
+    "timestamp": "2026-04-15T10:26:00.914Z",
+    "prismId": "CMD-1776248760914",
+    "signal_summary": "MONITOR (Heuristic)",
+    "reasoning_hash": "Standard refraction based on raw momentum and trench activity pulse.",
+    "security_results": "[\"OKX Security: unverified (code -1)\",\"Narrative clean — no red flags.\",\"Low confidence (66%) increases risk.\"]"
+  },
+  {
+    "timestamp": "2026-04-15T10:41:26.614Z",
+    "prismId": "DIRECTIVE-1776249686614",
+    "signal_summary": "Direct Swap: USDC → OKB",
+    "reasoning_hash": "Manual Commander Directive.",
+    "security_results": "BYPASSED (Priority Directive)",
+    "outcome_tx": "0xee571c85cbe3b279c2595ff1fa5ddf8efee293df03fba3321884f584ef612c95"
+  },
+  {
+    "timestamp": "2026-04-15T10:46:14.130Z",
+    "prismId": "CMD-1776249974130",
+    "signal_summary": "MONITOR (Heuristic)",
+    "reasoning_hash": "Standard refraction based on raw momentum and trench activity pulse.",
+    "security_results": "[\"OKX Security: unverified (code -1)\",\"Narrative clean — no red flags.\",\"Low confidence (63%) increases risk.\"]"
+  },
+  {
+    "timestamp": "2026-04-15T10:46:34.426Z",
+    "prismId": "DIRECTIVE-1776249994426",
+    "signal_summary": "Direct Swap: USDC → OKB",
+    "reasoning_hash": "Manual Commander Directive.",
+    "security_results": "BYPASSED (Priority Directive)",
+    "outcome_tx": "0x23b648acc9ebf83bf9ae37fad944d0dbed3698be46157c042759c5eb2ab54bc1"
+  },
+  {
+    "timestamp": "2026-04-15T10:55:00.037Z",
+    "prismId": "CMD-1776250500037",
+    "signal_summary": "MONITOR (Heuristic)",
+    "reasoning_hash": "Standard refraction based on raw momentum and trench activity pulse.",
+    "security_results": "[\"OKX Security: unverified (code -1)\",\"Narrative clean — no red flags.\",\"Low confidence (66%) increases risk.\"]"
+  },
+  {
+    "timestamp": "2026-04-15T10:57:49.596Z",
+    "prismId": "DIRECTIVE-1776250669596",
+    "signal_summary": "Direct Swap: USDC → OKB",
+    "reasoning_hash": "Manual Commander Directive.",
+    "security_results": "BYPASSED (Priority Directive)",
+    "outcome_tx": "0xb61585b5aea10d6dd992e6725f40c2f72202b8cfb1a6b26d65a5870eb3430664"
+  }
+]

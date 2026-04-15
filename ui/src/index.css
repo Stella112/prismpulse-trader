@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-zinc-950 text-white selection:bg-cyan-500/30;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer utilities {
+  .bg-grid-small {
+    background-image: radial-gradient(circle at center, #27272a 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* LUXURY GLASSMORPHISM */
+  .glass-card {
+    @apply bg-zinc-900/40 backdrop-blur-xl border border-white/5 shadow-[0_8px_32px_0_rgba(0,0,0,0.8)];
+    background: linear-gradient(135deg, rgba(39, 39, 42, 0.4) 0%, rgba(24, 24, 27, 0.6) 100%);
+  }
+
+  .glass-card-shiny {
+    @apply glass-card relative overflow-hidden;
+  }
+
+  .glass-card-shiny::before {
+    content: '';
+    @apply absolute -inset-[100%] bg-gradient-to-r from-transparent via-white/5 to-transparent -rotate-45 pointer-events-none;
+    transition: transform 1s ease-in-out;
+  }
+
+  .glass-card-shiny:hover::before {
+    transform: translateX(200%);
+  }
+
+  .text-shiny {
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-white/40;
+  }
+
+  .glow-cyan {
+    @apply shadow-[0_0_50px_-12px_rgba(6,182,212,0.5)];
+  }
+
+  .glow-violet {
+    @apply shadow-[0_0_50px_-12px_rgba(139,92,246,0.5)];
+  }
+
+  .bg-radial-gradient {
+    background: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
