@@ -51,5 +51,207 @@
     "reasoning_hash": "Manual Commander Directive.",
     "security_results": "BYPASSED (Priority Directive)",
     "outcome_tx": "0xb61585b5aea10d6dd992e6725f40c2f72202b8cfb1a6b26d65a5870eb3430664"
+  },
+  {
+    "timestamp": "2026-04-15T14:33:09.340Z",
+    "prismId": "CMD-1776263589341",
+    "signal_summary": "BULLISH (Heuristic)",
+    "reasoning_hash": "Standard refraction based on raw momentum and trench activity pulse.",
+    "security_results": "[\"OKX Security: unverified (code -1)\",\"Narrative clean — no red flags.\"]"
+  },
+  {
+    "timestamp": "2026-04-15T14:38:57.586Z",
+    "prismId": "CMD-1776263937586",
+    "signal_summary": "BULLISH (Heuristic)",
+    "reasoning_hash": "Standard refraction based on raw momentum and trench activity pulse.",
+    "security_results": "[\"OKX Security: unverified (code -1)\",\"Narrative clean — no red flags.\"]"
+  },
+  {
+    "timestamp": "2026-04-15T14:44:36.236Z",
+    "prismId": "CMD-1776264276237",
+    "signal_summary": "BULLISH (Heuristic)",
+    "reasoning_hash": "Standard refraction based on raw momentum and trench activity pulse.",
+    "security_results": "[\"OKX Security: unverified (code -1)\",\"Narrative clean — no red flags.\"]"
+  },
+  {
+    "timestamp": "2026-04-15T14:47:21.935Z",
+    "prismId": "PROVE-IT-74",
+    "signal_summary": "Prove-it: OKB → USDC (safe fallback)",
+    "reasoning_hash": "Standard refraction based on raw momentum and trench activity pulse.",
+    "security_results": "[\"OKX Security: unverified (code -1)\",\"Narrative clean — no red flags.\"]",
+    "outcome_tx": "0x3b12825bc08bbe7059476f486f50f5c4cba725d62ef3485db551a77518c8dde9"
+  },
+  {
+    "timestamp": "2026-04-15T14:47:34.127Z",
+    "prismId": "CMD-1776264454127",
+    "signal_summary": "BULLISH (Heuristic)",
+    "reasoning_hash": "Standard refraction based on raw momentum and trench activity pulse.",
+    "security_results": "[\"OKX Security: unverified (code -1)\",\"Narrative clean — no red flags.\"]"
+  },
+  {
+    "timestamp": "2026-04-15T15:12:40.053Z",
+    "prismId": "PROVE-IT-85",
+    "signal_summary": "Prove-it: OKB → USDC (safe fallback)",
+    "reasoning_hash": "Standard refraction based on raw momentum and trench activity pulse.",
+    "security_results": "[\"OKX Security: unverified (code -1)\",\"Narrative clean — no red flags.\"]",
+    "outcome_tx": "0xe93d05fc575c0710ebd75a3612020bc993eae960486553a12f9c5d36cacf588d"
+  },
+  {
+    "timestamp": "2026-04-15T15:14:57.968Z",
+    "prismId": "PROVE-IT-86",
+    "signal_summary": "Prove-it: OKB → USDC (safe fallback)",
+    "reasoning_hash": "Standard refraction based on raw momentum and trench activity pulse.",
+    "security_results": "[\"OKX Security: unverified (code -1)\",\"Narrative clean — no red flags.\"]",
+    "outcome_tx": "0xd072c108e1439e98ed291b817aee12df52dd90c01bd7b0fbd7fc8a82ae3803df"
+  },
+  {
+    "timestamp": "2026-04-15T15:17:17.482Z",
+    "prismId": "PROVE-IT-87",
+    "signal_summary": "Prove-it: OKB → USDC (safe fallback)",
+    "reasoning_hash": "Standard refraction based on raw momentum and trench activity pulse.",
+    "security_results": "[\"OKX Security: unverified (code -1)\",\"Narrative clean — no red flags.\"]",
+    "outcome_tx": "0x5fb93446db49b482deb102ac3265e9436fa5ee34c79ca588cc2815e6a93039f5"
+  },
+  {
+    "timestamp": "2026-04-15T15:19:36.169Z",
+    "prismId": "PROVE-IT-88",
+    "signal_summary": "Prove-it: OKB → USDC (safe fallback)",
+    "reasoning_hash": "Standard refraction based on raw momentum and trench activity pulse.",
+    "security_results": "[\"OKX Security: unverified (code -1)\",\"Narrative clean — no red flags.\"]",
+    "outcome_tx": "0x92d2661fdf8f1bbd8cc158e264b3155fd3773861856cb4d8ef7b4b307557eafc"
+  },
+  {
+    "timestamp": "2026-04-15T15:21:54.454Z",
+    "prismId": "PROVE-IT-89",
+    "signal_summary": "Prove-it: OKB → USDC (safe fallback)",
+    "reasoning_hash": "Standard refraction based on raw momentum and trench activity pulse.",
+    "security_results": "[\"OKX Security: unverified (code -1)\",\"Narrative clean — no red flags.\"]",
+    "outcome_tx": "0x4656b0354edbe2278a2e25f310aef83a8b22dbed4948e3485d4e635f99c2c015"
+  },
+  {
+    "timestamp": "2026-04-15T15:24:12.334Z",
+    "prismId": "PROVE-IT-90",
+    "signal_summary": "Prove-it: OKB → USDC (safe fallback)",
+    "reasoning_hash": "Standard refraction based on raw momentum and trench activity pulse.",
+    "security_results": "[\"OKX Security: unverified (code -1)\",\"Narrative clean — no red flags.\"]",
+    "outcome_tx": "0xc2029c235178e5c3160123f838a0af0246ace484a13633d6cb406455a56705d6"
+  },
+  {
+    "timestamp": "2026-04-15T16:05:12.465Z",
+    "prismId": "PROVE-IT-108",
+    "signal_summary": "Prove-it: OKB → USDC (safe fallback)",
+    "reasoning_hash": "Standard refraction based on raw momentum and trench activity pulse.",
+    "security_results": "[\"OKX Security: unverified (code -1)\",\"Narrative clean — no red flags.\"]",
+    "outcome_tx": "0x63a83136ac51bb8cfdff4561f5bdf1c87655a9804c7fe5a48ed4c97fc1421ace"
+  },
+  {
+    "timestamp": "2026-04-15T16:21:10.468Z",
+    "prismId": "CMD-1776270070468",
+    "signal_summary": "MONITOR (Heuristic)",
+    "reasoning_hash": "Standard refraction based on raw momentum and trench activity pulse.",
+    "security_results": "[\"OKX Security: unverified (code -1)\",\"Narrative clean — no red flags.\"]"
+  },
+  {
+    "timestamp": "2026-04-15T16:50:52.634Z",
+    "prismId": "PROVE-IT-128",
+    "signal_summary": "Prove-it: OKB → USDC (safe fallback)",
+    "reasoning_hash": "Standard refraction based on raw momentum and trench activity pulse.",
+    "security_results": "[\"OKX Security: unverified (code -1)\",\"Narrative clean — no red flags.\"]",
+    "outcome_tx": "0xaa50fda6494c1464c5c8ff4dfc146401147e9b647991eadfd8571b85f372ed2d"
+  },
+  {
+    "timestamp": "2026-04-15T16:53:15.689Z",
+    "prismId": "PROVE-IT-129",
+    "signal_summary": "Prove-it: OKB → USDC (safe fallback)",
+    "reasoning_hash": "Standard refraction based on raw momentum and trench activity pulse.",
+    "security_results": "[\"OKX Security: unverified (code -1)\",\"Narrative clean — no red flags.\"]",
+    "outcome_tx": "0x7a85439780a6f376504cc1a143823f2f3b43456d71fdd694171c918049fd8026"
+  },
+  {
+    "timestamp": "2026-04-15T16:55:34.534Z",
+    "prismId": "PROVE-IT-130",
+    "signal_summary": "Prove-it: OKB → USDC (safe fallback)",
+    "reasoning_hash": "Standard refraction based on raw momentum and trench activity pulse.",
+    "security_results": "[\"OKX Security: unverified (code -1)\",\"Narrative clean — no red flags.\"]",
+    "outcome_tx": "0xb93fc425155d184377143d10b271dc680f007694125350a2966dd8f3c1af9c2b"
+  },
+  {
+    "timestamp": "2026-04-15T17:16:47.785Z",
+    "prismId": "DIRECTIVE-1776273407785",
+    "signal_summary": "Direct Swap: USDC → OKB",
+    "reasoning_hash": "Manual Commander Directive.",
+    "security_results": "BYPASSED (Priority Directive)",
+    "outcome_tx": "0x7a19a87d7e4ea1d6348b4712254f7d11e41b0ecc3074fd548df005f6e59ceb69"
+  },
+  {
+    "timestamp": "2026-04-15T17:55:42.173Z",
+    "prismId": "PROVE-IT-156",
+    "signal_summary": "Prove-it: OKB → USDC (safe fallback)",
+    "reasoning_hash": "Standard refraction based on raw momentum and trench activity pulse.",
+    "security_results": "[\"OKX Security: unverified (code -1)\",\"Narrative clean — no red flags.\"]",
+    "outcome_tx": "0x6c6dfdb4775cfe69ec7d128a8de0db41ce527a91f76dc9688cce5fa5ae6abfab"
+  },
+  {
+    "timestamp": "2026-04-15T17:58:09.644Z",
+    "prismId": "DIRECTIVE-1776275889644",
+    "signal_summary": "Direct Swap: USDC → OKB",
+    "reasoning_hash": "Manual Commander Directive.",
+    "security_results": "BYPASSED (Priority Directive)",
+    "outcome_tx": "0x51be583700c1dcab665009f67919bd8d4be595ac378da738b28ad218d1f811a9"
+  },
+  {
+    "timestamp": "2026-04-15T18:04:03.919Z",
+    "prismId": "CMD-1776276243919",
+    "signal_summary": "BULLISH (Heuristic)",
+    "reasoning_hash": "Standard refraction based on raw momentum and trench activity pulse.",
+    "security_results": "[\"OKX Security: unverified (code -1)\",\"Narrative clean — no red flags.\"]"
+  },
+  {
+    "timestamp": "2026-04-15T18:05:02.167Z",
+    "prismId": "DIRECTIVE-1776276302167",
+    "signal_summary": "Direct Swap: USDC → OKB",
+    "reasoning_hash": "Manual Commander Directive.",
+    "security_results": "BYPASSED (Priority Directive)",
+    "outcome_tx": "0x9031ee04e7b497798e2e97dea70eb836d5444764d4396daadffc94c52396c168"
+  },
+  {
+    "timestamp": "2026-04-15T20:02:58.591Z",
+    "prismId": "DIRECTIVE-1776283378591",
+    "signal_summary": "Direct Swap: USDC → OKB",
+    "reasoning_hash": "Manual Commander Directive.",
+    "security_results": "BYPASSED (Priority Directive)",
+    "outcome_tx": "0x275928b170ded208b07c0e673f49346f2266357f27520ef8ee997877e12bcf08"
+  },
+  {
+    "timestamp": "2026-04-15T20:05:08.928Z",
+    "prismId": "DIRECTIVE-1776283508928",
+    "signal_summary": "Direct Swap: USDC → OKB",
+    "reasoning_hash": "Manual Commander Directive.",
+    "security_results": "BYPASSED (Priority Directive)",
+    "outcome_tx": "0x48d18cc020429e8a5f52e661fc6b6023fb234b715fcd3866af6a0217481abd64"
+  },
+  {
+    "timestamp": "2026-04-15T20:45:10.259Z",
+    "prismId": "DIRECTIVE-1776285910259",
+    "signal_summary": "Direct Swap: USDC → OKB",
+    "reasoning_hash": "Manual Commander Directive.",
+    "security_results": "BYPASSED (Priority Directive)",
+    "outcome_tx": "0xbd92f1c75616f5dc6df5723337c3deee4eff6028c655b101e89534fc3a08dcf7"
+  },
+  {
+    "timestamp": "2026-04-15T20:50:02.738Z",
+    "prismId": "DIRECTIVE-1776286202738",
+    "signal_summary": "Direct Swap: USDC → OKB",
+    "reasoning_hash": "Manual Commander Directive.",
+    "security_results": "BYPASSED (Priority Directive)",
+    "outcome_tx": "0x06855aed5fbc40490764deb88501027c8d4509a0020c06044406d9dfd2d63cd7"
+  },
+  {
+    "timestamp": "2026-04-15T20:52:42.029Z",
+    "prismId": "DIRECTIVE-1776286362029",
+    "signal_summary": "Direct Swap: USDC → OKB",
+    "reasoning_hash": "Manual Commander Directive.",
+    "security_results": "BYPASSED (Priority Directive)",
+    "outcome_tx": "0x1d539466d6bcbb78d732cfce299e3a0254e2c39ce8f8ee287201775b90ec57e3"
   }
 ]

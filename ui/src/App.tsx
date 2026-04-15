@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Diamond, Shield, Zap, TrendingUp, Lock, MessageCircle, ChevronRight, Sparkles } from "lucide-react";
+import { Diamond, Shield, Zap, MessageCircle, ChevronRight, Sparkles } from "lucide-react";
 import ChatModal from "./ChatModal";
 import LeaderboardModal from "./LeaderboardModal";
 
@@ -129,6 +129,22 @@ function AgentActivitySection() {
 export default function App() {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isLeaderboardOpen, setIsLeaderboardOpen] = useState(false);
+  const [status, setStatus] = useState({ loopCount: 0, network: 'X Layer' });
+
+  useEffect(() => {
+    const fetchStatus = async () => {
+      try {
+        const res = await fetch(`http://${window.location.hostname}:4002/api/status`);
+        if (res.ok) {
+          const json = await res.json();
+          setStatus(json);
+        }
+      } catch (e) {}
+    };
+    fetchStatus();
+    const inv = setInterval(fetchStatus, 15000);
+    return () => clearInterval(inv);
+  }, []);
 
   return (
     <div className="min-h-screen bg-zinc-950 text-white font-sans selection:bg-violet-500/30">
@@ -186,12 +202,20 @@ export default function App() {
               Start Forging
               <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button 
-              onClick={() => setIsLeaderboardOpen(true)}
-              className="px-10 py-5 rounded-2xl font-bold text-lg border border-white/10 hover:bg-white/5 transition-all text-zinc-300 hover:text-white"
-            >
-              View Leaderboard
-            </button>
+             <div className="flex items-center gap-6 px-8 py-5 rounded-2xl border border-white/5 bg-prime-900/40 backdrop-blur-md shadow-inner">
+               <div className="text-left">
+                 <div className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-1">Autonomous Loops</div>
+                 <div className="text-2xl font-black text-cyan-400 font-mono tracking-tighter">#{status.loopCount || '...'}</div>
+               </div>
+               <div className="w-[1px] h-8 bg-white/10"></div>
+               <div className="text-left">
+                 <div className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-1">x402 Economy</div>
+                 <div className="flex items-center gap-2">
+                   <div className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] animate-pulse"></div>
+                   <span className="text-sm font-black text-white tracking-wide uppercase">Active</span>
+                 </div>
+               </div>
+             </div>
           </div>
         </div>
 

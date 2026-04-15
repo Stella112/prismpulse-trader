@@ -18,7 +18,17 @@ PrismPulse acts as the **"Intuition Layer"** for the X Layer ecosystem. It solve
 1. **Intelligent Scanning**: It uses the Onchain OS Market Module to detect high-velocity token momentum before human traders can react.
 2. **AI-Driven Vetting**: It pipes those signals into a local Llama 3.2 model to apply a semantic "sanity check" (identifying honeypot patterns and narrative risks) that simple math algorithms often miss.
 3. **Micro-Proving**: Before committing capital, it safely routes a micro-transaction (0.001 OKB) via the Onchain OS DEX to empirically verify liquidity and slippage.
-4. **Self-Sustaining Economy**: It monetises its high-confidence alpha via x402 payments, using the revenue to auto-refill its native OKB gas vault, resulting in a true "deploy and forget" sovereign agent.
+4. **Self-Sustaining Economy (Earn → Pay → Earn)**: It monetises its high-confidence alpha via x402 payments, using the revenue to auto-refill its native OKB gas vault, resulting in a true "deploy and forget" sovereign agent.
+
+---
+## ⛽ The GasVault Auto-Refill Mechanic
+
+To operate 24/7 on X Layer, PrismPulse requires OKB for gas. Rather than relying on a human commander to constantly top up the wallet, PrismPulse features an autonomous **GasVault**:
+- When the agent detects its OKB gas balance dropping below a critical threshold (`0.005 OKB`), it triggers an **emergency pause** on all complex meme token routing.
+- It then reaches into its stable profit reserves (`USDC`) and executes an automated, low-gas swap directly to `OKB`.
+- Once the gas tank is refilled (target: `0.02 OKB`), normal high-frequency hunting operations resume instantly. 
+
+This creates a closed-loop economy where the agent literally pays its own rent to live on-chain.
 
 ---
 ## 🏗️ Architecture Overview

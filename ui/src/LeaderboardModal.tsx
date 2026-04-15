@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { X, Trophy, BarChart3, Globe, Zap, ArrowUpRight } from "lucide-react";
+import { X, Trophy, BarChart3, Globe, ArrowUpRight } from "lucide-react";
 
 export default function LeaderboardModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [leaders, setLeaders] = useState<any[]>([]);
