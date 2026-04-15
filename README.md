@@ -89,7 +89,7 @@ User / Autonomous Loop (every 75s)
 ## 🚀 Running Locally
 
 ```bash
-git clone https://github.com/0xmoeii/prismpulse-trader
+git clone https://github.com/Stella112/prismpulse-trader
 cd prismpulse-trader && npm install
 cp .env.example .env   # Add OKX_API_KEY, OKX_SECRET_KEY, OKX_PASSPHRASE, X_LAYER_WALLET_PK
 ollama pull llama3.2:1b
