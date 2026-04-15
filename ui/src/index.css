@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-prime-950 text-white selection:bg-cyan-500/30;
+    @apply bg-[#030014] text-white selection:bg-cyan-500/30;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
   h1, h2, h3, h4, h5, h6 {
@@ -20,7 +20,7 @@
 
   /* LUXURY GLASSMORPHISM */
   .glass-card {
-    @apply bg-prime-900/40 backdrop-blur-2xl border border-white/5 shadow-[0_8px_32px_0_rgba(0,0,0,0.8)];
+    @apply bg-[#0a0129]/40 backdrop-blur-2xl border border-white/5 shadow-[0_8px_32px_0_rgba(0,0,0,0.8)];
     background: linear-gradient(135deg, rgba(39, 39, 42, 0.2) 0%, rgba(24, 24, 27, 0.4) 100%);
   }
 
