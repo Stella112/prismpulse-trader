@@ -131,11 +131,11 @@ export default function App() {
       {/* NAVBAR */}
       <nav className="border-b border-white/5 px-8 py-4 flex items-center justify-between bg-black/40 backdrop-blur-xl sticky top-0 z-50">
         <div className="flex items-center gap-3 group cursor-pointer">
-          <div className="relative">
-            <div className="absolute -inset-1 bg-violet-500 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-            <Diamond className="relative h-8 w-8 text-violet-400" />
-          </div>
-          <span className="text-2xl font-bold tracking-tighter text-shiny">PrismPulse</span>
+          <img 
+            src="/logo.jpg" 
+            alt="PrismPulse Logo" 
+            className="h-12 md:h-14 w-auto object-contain drop-shadow-[0_0_15px_rgba(139,92,246,0.3)] transition-transform duration-500 group-hover:scale-105"
+          />
         </div>
         <div className="flex items-center gap-8 text-sm hidden md:flex font-medium text-zinc-400">
           <a href="#" className="hover:text-white transition-colors">Features</a>
