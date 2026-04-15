@@ -344,38 +344,30 @@ app.post('/api/command', async (req: any, res: any) => {
       });
     }
 
+    // ── BALANCE / ASSET INTENT (New: Precise Asset Reporting) ────────────────
 
-
-    
-    // ── DIRECT MANUAL DIRECTIVE (Override Autonomy) ────────────────────────
-    if (cmd.includes('swap') && (cmd.includes('usdc') || cmd.includes('usdt')) && (cmd.includes('back to okb') || cmd.includes('to okb'))) {
-      const fromToken = cmd.includes('usdt') ? TOKENS.USDT : TOKENS.USDC;
-      const amount = "2.0"; // Target unit for manual swaps (or dynamic based on bal)
+    if (cmd.includes('balance') || cmd.includes('how much') || cmd.includes('assets')) {
+      let assetReply = `💠 PRISM PULSE — Mainnet Asset Manager\n\n`;
       
-      console.log(`[API] ⚡ COMMANDER DIRECTIVE: manual swap to OKB...`);
-      
-      try {
-        const txHash = await executor.manualExecuteSwap(fromToken, TOKENS.OKB_NATIVE, amount);
-        txLog.push(txHash);
-        
-        await journal.log({
-          timestamp: new Date().toISOString(),
-          prismId: `DIRECTIVE-${Date.now()}`,
-          signal_summary: `Manual Directive: USDC → OKB`,
-          reasoning_hash: "User-directed manual swap command.",
-          security_results: "BYPASSED (Commander Directive)",
-          outcome_tx: txHash
-        });
-
-        return res.json({
-          reply: `📡 DIRECTIVE RECEIVED & EXECUTED.\n\nCommander, I have bypassed autonomous pulse thresholds to execute your swap:\nSwap: ${fromToken === TOKENS.USDC ? 'USDC' : 'USDT'} → OKB (${amount} units)\n\n⚡ MAINNET TX BROADCAST!\nHash: ${txHash}\nExplorer: https://www.okx.com/web3/explorer/xlayer/tx/${txHash}`,
-          prism: { confidence: 100, strategy: 'DIRECTIVE_EXECUTION', risk_narrative: 'Manual swap directive.' },
-          report: { isSafe: true, riskScore: 0, details: ['Manual command bypass.'] }, 
-          txLog
-        });
-      } catch (e) {
-        return res.json({ reply: `⚠️ Directive failed: ${e.message}` });
+      if (cmd.includes('usdc')) {
+        const busdc = await executor.getBalanceOf(TOKENS.USDC);
+        assetReply += `USDC BALANCE: $${(Number(busdc) / 1e6).toFixed(2)}\nTOKEN: ${TOKENS.USDC}\n`;
+      } else if (cmd.includes('usdt')) {
+        const busdt = await executor.getBalanceOf(TOKENS.USDT);
+        assetReply += `USDT BALANCE: $${(Number(busdt) / 1e6).toFixed(2)}\nTOKEN: ${TOKENS.USDT}\n`;
+      } else {
+        const bokb = await executor.getBalance();
+        assetReply += `OKB BALANCE:  ${parseFloat(bokb).toFixed(6)} OKB\nNETWORK:       X Layer Mainnet\n`;
       }
+
+      assetReply += `\nWALLET: ${executor.getAccountAddress()}\nSTATUS: Verified On-chain ✅`;
+
+      return res.json({
+        reply: assetReply,
+        prism: { confidence: 100, strategy: 'ASSET_REPORTING', risk_narrative: 'Live on-chain balance query.' },
+        report: { isSafe: true, riskScore: 0, details: ['Physical state inquiry.'] },
+        txLog
+      });
     }
 
     // ── OLLAMA REASONING (for all other commands) ────────────────────────────
@@ -538,6 +530,10 @@ async function autonomousLoop() {
           txLog.push(fullTx);
           console.log(`[Loop] 🎉 MEME TRADE! TX: ${fullTx}`);
           await journal.log({ timestamp: new Date().toISOString(), prismId: `MEME-${loopCount}`, signal_summary: `🔥 MEME BUY: ${targetLabel} | ${size} OKB`, reasoning_hash: prism.risk_narrative, security_results: JSON.stringify(report.details), outcome_tx: fullTx });
+
+          // 💸 Publish to x402 signal market
+          const signalId = payWall.publishSignal({ ...prism, ticker: targetLabel, outcome_tx: fullTx });
+          console.log(`[Loop] 💸 x402 signal published: /api/signal/${signalId}`);
         }
       } catch (e: any) {
         console.error(`[Loop] Trade failed: ${e.message}`);
@@ -546,7 +542,10 @@ async function autonomousLoop() {
       console.log(`[Loop] ⏸  Confidence ${prism.confidence}% below execution threshold (80%).`);
     }
 
-    await social.postPrismPulse(prism);
+    // Post to Moltbook (rate limited — only when confidence is meaningful)
+    if (prism.confidence >= 75) {
+      await social.postPrismPulse(prism);
+    }
   } catch (e: any) {
     console.error('[Loop Error]', String(e.message || e));
   }

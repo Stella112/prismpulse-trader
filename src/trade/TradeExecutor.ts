@@ -75,7 +75,7 @@ export class TradeExecutor {
     }) as bigint;
   }
 
-  async getSwapRoute(fromToken: string, toToken: string, amountWei: string, slippage: string = '1') {
+  async getSwapRoute(fromToken: string, toToken: string, amountWei: string, slippage: string = '2') {
     const params = `chainIndex=196&amount=${amountWei}&fromTokenAddress=${fromToken}&toTokenAddress=${toToken}&userWalletAddress=${this.account.address}&slippagePercent=${slippage}`;
     const path = `/api/v6/dex/aggregator/swap?${params}`;
     const res = await fetch(`${BASE_URL}${path}`, { headers: this.getHeaders('GET', path) });
@@ -87,21 +87,25 @@ export class TradeExecutor {
   async approveToken(tokenAddress: string, spender: string): Promise<string | null> {
     try {
       const data = ('0x095ea7b3' + spender.replace('0x','').padStart(64,'0') + 'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff') as Hex;
-      return await this.walletClient.sendTransaction({ account: this.account, to: tokenAddress as Address, data });
+      return await this.walletClient.sendTransaction({ account: this.account, chain: undefined, to: tokenAddress as Address, data });
     } catch (e) { return null; }
   }
 
   async executeFullTrade(toToken: string, amountOKB: string = '0.005', fromToken: string = TOKENS.OKB_NATIVE) {
     const decimals = this.getTokenDecimals(fromToken);
     const amountWei = parseUnits(amountOKB, decimals).toString();
+    // Fetch route as close to broadcast as possible to prevent expiry
     const route = await this.getSwapRoute(fromToken, toToken, amountWei);
-    if (!route) throw new Error('No route');
+    if (!route) throw new Error('No route found — insufficient liquidity or unsupported token.');
+    const gasPrice = await this.publicClient.getGasPrice();
     return await this.walletClient.sendTransaction({
       account: this.account,
+      chain: undefined,
       to: route.tx.to as Address,
       data: route.tx.data as Hex,
       value: BigInt(route.tx.value || '0'),
-      gas: BigInt(Math.ceil(Number(route.tx.gas) * 1.2)),
+      gas: BigInt(Math.ceil(Number(route.tx.gas) * 1.5)),
+      gasPrice: BigInt(Math.ceil(Number(gasPrice) * 1.1)),
     });
   }
 
@@ -129,12 +133,19 @@ export class TradeExecutor {
       await new Promise(r => setTimeout(r, 2000));
     }
 
+    // Fetch a fresh route immediately before broadcast to prevent quote expiry
+    const freshRoute = await this.getSwapRoute(fromToken, toToken, amountWei);
+    if (!freshRoute) throw new Error('Fresh route fetch failed — market moved.');
+    const gasPrice = await this.publicClient.getGasPrice();
+    
     return await this.walletClient.sendTransaction({
       account: this.account,
-      to: route.tx.to as Address,
-      data: route.tx.data as Hex,
-      value: BigInt(route.tx.value || '0'),
-      gas: BigInt(Math.ceil(Number(route.tx.gas) * 1.3)),
+      chain: undefined,
+      to: freshRoute.tx.to as Address,
+      data: freshRoute.tx.data as Hex,
+      value: BigInt(freshRoute.tx.value || '0'),
+      gas: BigInt(Math.ceil(Number(freshRoute.tx.gas) * 1.5)),
+      gasPrice: BigInt(Math.ceil(Number(gasPrice) * 1.1)),
     });
   }
 }
